@@ -21,7 +21,7 @@ public class UserController {
 
     }
 
-    @GetMapping("/fetchById/{userId}")
+    @GetMapping("/fetchUserById/{userId}")
     public ResponseEntity<UserDTO> fetchUserById(@PathVariable Integer userId) {
         UserDTO userFound =userService.getUserById(userId);
 
