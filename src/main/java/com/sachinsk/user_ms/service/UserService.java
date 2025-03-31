@@ -21,4 +21,11 @@ public class UserService {
         //mapping entity back to DTO since we are returning the DTO to enduser and not the real entity
         return UserMapper.INSTANCE.mapUserToUserDTO(savedUser);
     }
+
+    public UserDTO getUserById(Integer userId) {
+
+        User searchedUser = userRepo.findById(userId).orElse(null);
+
+        return UserMapper.INSTANCE.mapUserToUserDTO(searchedUser);
+    }
 }
